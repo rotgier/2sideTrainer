@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2-side pll recognition trainer</title>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="../rubikjs/RubikjsCore.js"></script>
+        <script type="text/javascript" src="../rubikjs/RubikjsRender.js"></script>
+        <script type="text/javascript" src="../rubikjs/RubikjsRenderWebGL.js"></script>
+        <script type="text/javascript" src="../rubikjs/RubikjsRenderCanvas.js"></script>
+        <script type="text/javascript" src="../rubikjs/RubikjsNotation.js"></script>
+        <script type="text/javascript" src="../rubikjs/RubikjsTwisty.js"></script>
+        <script type="text/javascript" src="../rubikjs/ClassicRubiksCube.js"></script>
+        <script type="text/javascript" src="pllTrainer.js"></script>
+        <style>
+            #solution {
+                font-family: 'Courier New', Courier, monospace;
+            }
+            form {
+                display: inline-block;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            input[type="button"] {
+                font-family: 'Courier New', Courier, monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <canvas id="cube" width="300" height="300"></canvas>
+        </div>
+        <form>
+            <input type="button" value="<- Ja" onclick="doPll('Ja','U')"/>
+            <input type="button" value="-  Ja" onclick="doPll('Ja','')" />
+            <input type="button" value="-> Ja" onclick="doPll('Ja','U\'')" />
+        </form>
+        <br>
+        <!--
+        <form>
+            <input type="button" value="<- Jb" onclick="doPll('Jb','U')" />
+            <input type="button" value="-  Jb" onclick="doPll('Jb','')" />
+            <input type="button" value="-> Jb" onclick="doPll('Jb','U\'')" />
+        </form>
+        <br>
+        -->
+        <form>
+            <input type="button" value="     " onclick="doPll('Ja','U\'')" />
+            <input type="button" value="U2 Ja" onclick="doPll('Ja','U2')" />
+            <input type="button" value="     " onclick="doPll('Ja','')" />
+        </form>
+        <br>
+        <!--
+        <form>
+            <input type="button" value="     " onclick="doPll('Jb','U\'')" />
+            <input type="button" value="U2 Jb" onclick="doPll('Jb','U2')" />
+            <input type="button" value="     " onclick="doPll('Jb','')" />
+        </form>
+        -->
+        <h1 id="solution" >&nbsp;&nbsp;</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <form>
+            <fieldset style="display: inline-block">
+                <legend>Options</legend>
+                <input type="radio" name="renderer" onchange="changeRenderer('WebGL')" id="webgl" checked /> <label for="webgl">WebGL</label> <input type="radio" name="renderer" onchange="changeRenderer('Canvas')" id="canvas" /> <label for="canvas">Canvas</label> <br />
+                <input type="checkbox" id="cn" onchange="updateCN()" /> <label for="cn">Color Neutral</label> <br />
+                <label for="setup">Setup moves:</label> <input type="text" id="setup" value="x2" onchange="updateCN()" disabled />
+            </fieldset>
+        </form>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>
+            Instructions:
+            <ul>
+                <li>Step 1: Press space</li>
+                <li>Step 2: Find which PLL has been shown</li>
+                <li>Step 3: Press space again</li>
+                <li>Step 4: The solution is given, check if you're correct</li>
+                <li>Step 5: Go to step 1</li>
+            </ul>
+            You can also use left and right arrow keys to do Y and Y' rotations<br />
+            If you're not color neutral, you can uncheck the "Color Neutral" checkbox, and change the "setup moves" input to the rotations you need to do to have your cross face down.
+        </p>
+    </body>
+</html>
+

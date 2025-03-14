@@ -136,6 +136,13 @@ function updateCN() {
     setupMoves = document.getElementById("setup").value;
 }
 
+function next() {
+    var el = document.getElementById("solution");
+    el.innerHTML = "&nbsp;";
+    restart(options);
+    newPll();
+}
+
 window.onkeydown = function(event) {
     if(event.key === " " || event.key === "6") {
         var el = document.getElementById("solution");

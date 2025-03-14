@@ -3,6 +3,7 @@
     <head>
         <title>2-side pll recognition trainer</title>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="../rubikjs/RubikjsCore.js"></script>
         <script type="text/javascript" src="../rubikjs/RubikjsRender.js"></script>
         <script type="text/javascript" src="../rubikjs/RubikjsRenderWebGL.js"></script>
@@ -12,15 +13,37 @@
         <script type="text/javascript" src="../rubikjs/ClassicRubiksCube.js"></script>
         <script type="text/javascript" src="pllTrainer.js"></script>
         <style>
+            html {
+                font-size: 16px;
+            }
+            #cube {
+                width: 100%;
+                height: auto; /* Zachowuje proporcje */
+                max-width: 600px; /* Opcjonalnie, aby nie był zbyt duży na dużych ekranach */
+                display: block;
+                margin: 0 auto;
+            }
             #solution {
                 font-family: 'Courier New', Courier, monospace;
             }
             form {
-                display: inline-block;
+                display: flex;
+                justify-content: space-between; /* Rozdziela przyciski */
+                width: 100%; /* Upewnia się, że form zajmuje całą szerokość */
                 font-family: 'Courier New', Courier, monospace;
+            }
+            form#oll input[type="button"] {
+                width: 25%;
             }
             input[type="button"] {
                 font-family: 'Courier New', Courier, monospace;
+                font-size: 40px; /* lub większa wartość */
+                /* padding: 10px 15px; */
+                margin-right: 5px;
+                margin-bottom: 5px;
+                width: 33.33%; /* Każdy przycisk zajmuje 1/3 szerokości */
+                padding: 10px 0; /* Opcjonalnie możesz dodać trochę paddingu */
+                box-sizing: border-box; /* Umożliwia dokładne obliczenie szerokości z paddingiem */
             }
         </style>
     </head>
@@ -28,11 +51,26 @@
         <div>
             <canvas id="cube" width="300" height="300"></canvas>
         </div>
-        <form>
-            <input type="button" value="<- R Square" onclick="doOll('R Square','U\'')"/>
-            <input type="button" value="-  R Square" onclick="doOll('R Square','')" />
-            <input type="button" value="-> R Square" onclick="doOll('R Square','U')" />
+        <!-- style="font-size: 45px;" -->
+        <form id="auf">
+            <input type="button" value="&circlearrowleft;" onclick="doMoves('U\'')"/>
+            <input type="button" value="&#128260;" onclick="doMoves('U2')" />
+            <input type="button" value="&circlearrowright;" onclick="doMoves('U')" />
         </form>
+        <form id="oll">
+            <input type="button" value="< P" onclick="doOll('OLL 43','')"/>
+            <input type="button" value="P >" onclick="doOll('OLL 44','')" />
+            <input type="button" value="< C" onclick="doOll('OLL 32','')" />
+            <input type="button" value="C >" onclick="doOll('OLL 31','')" />
+
+        </form>
+        <form id="next">
+            <input type="button" value="Next" onclick="next()"/>
+        </form>
+        <h1 id="solution" >&nbsp;&nbsp;</h1>
+    </body>
+</html>
+<!--
         <br>
         <form>
             <input type="button" value="<- L Square" onclick="doOll('L Square','U\'')" />
@@ -44,16 +82,16 @@
             <input type="button" value="           " onclick="doOll('L Square','U\'')" />
             <input type="button" value="U2 R Square" onclick="doOll('R Square','U2')" />
             <input type="button" value="           " onclick="doOll('L Square','')" />
-<!--            <input type="button" value="           " onclick="doOll('L Square','U')" />-->
         </form>
         <br>
         <form>
             <input type="button" value="           " onclick="doOll('L Square','U\'')" />
             <input type="button" value="U2 L Square" onclick="doOll('L Square','U2')" />
             <input type="button" value="           " onclick="doOll('L Square','')" />
-<!--            <input type="button" value="           " onclick="doOll('L Square','U')" />-->
         </form>
         <h1 id="solution" >&nbsp;&nbsp;</h1>
+        -->
+<!--
         <br />
         <br />
         <br />
@@ -84,6 +122,6 @@
             You can also use left and right arrow keys to do Y and Y' rotations<br />
             If you're not color neutral, you can uncheck the "Color Neutral" checkbox, and change the "setup moves" input to the rotations you need to do to have your cross face down.
         </p>
-    </body>
-</html>
+-->
+
 

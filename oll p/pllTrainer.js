@@ -53,10 +53,10 @@ var pllsData  = [
 ];
 
 var ollData  = [
-    ["OLL 31 Couch Right", "R' U' F U R U' R' F' R", 1],
-    ["OLL 32 Couch Left", "S R U R' U' R' F R f'", 1],
-    ["OLL 43 P Left", "R' U' F' U F R", 1],
-    ["OLL 44 P Right", "F U R U' R' F'", 1],
+    ["OLL 31 Couch >", "R' U' F U R U' R' F' R", 1],
+    ["OLL 32 Couch <", "S R U R' U' R' F R f'", 1],
+    ["OLL 43 P >", "R' U' F' U F R", 1],
+    ["OLL 44 P <", "F U R U' R' F'", 1],
 ];
 
 var plls = [];
@@ -103,7 +103,7 @@ function newPll() {
             break;
     }
 
-    lastPll = ollAufPretty + " " + pll[2]
+    // lastPll = ollAufPretty + " " + pll[2]
 
     console.log("lastMoves: " + lastMoves);
     doMoves(lastMoves);
@@ -141,6 +141,13 @@ function next() {
     el.innerHTML = "&nbsp;";
     restart(options);
     newPll();
+}
+
+function repeat() {
+    var el = document.getElementById("solution");
+    restart(optionsBackStickers);
+    doMoves(lastMoves);
+    el.innerHTML = lastPll;
 }
 
 window.onkeydown = function(event) {

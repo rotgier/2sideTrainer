@@ -51,9 +51,16 @@ Rubikjs.Twisty.FixedPiecePlace = function() {
 
 Rubikjs.Twisty.FixedPiecePlace.prototype.makeOptions = function(defaultOptions, options, cubeSize) {
     var cameraMatrix = mat4.create();
-    mat4.translate(cameraMatrix, cameraMatrix, [0, 0, -2]);
-    mat4.rotateX(cameraMatrix, cameraMatrix, Math.PI/6);
-    mat4.rotateY(cameraMatrix, cameraMatrix, -Math.PI/6);
+    mat4.translate(cameraMatrix, cameraMatrix, [0, 0, -2.5]);
+
+    // PLL:
+    //mat4.rotateX(cameraMatrix, cameraMatrix, Math.PI/6);
+    //mat4.rotateY(cameraMatrix, cameraMatrix, -Math.PI/4.7);
+
+    // OLL:
+    mat4.rotateX(cameraMatrix, cameraMatrix, Math.PI/5);
+    mat4.rotateY(cameraMatrix, cameraMatrix, -Math.PI/4.7);
+
     var invSize = 1.0 / cubeSize;
     mat4.scale(cameraMatrix, cameraMatrix, [invSize, invSize, invSize]);
     var defaultDefaultOptions = {

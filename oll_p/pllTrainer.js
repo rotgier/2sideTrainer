@@ -14,7 +14,7 @@ var rendererName = "WebGL";
 function doOll(name) {
      var el = document.getElementById("solution");
      el.innerHTML = lastPll;
-     ollAlg = ollData.find(item => item[0].startsWith(name))[1]
+     ollAlg = ollData.find(item => item[1].startsWith(name))[2]
      doMoves(ollAlg)
 }
 
@@ -52,18 +52,50 @@ var pllsData  = [
 ];
 
 var ollData  = [
-    ["P", "OLL 31 Couch R' U' F", "R' U' F U R U' R' F' R", 1],
-    ["P", "OLL 32 Couch S sexy", "S R U R' U' R' F R f'", 1],
-    ["P", "OLL 43 P R' U' F'", "R' U' F' U F R", 1],
-    ["P", "OLL 44 F usexy", "F U R U' R' F'", 1],
+    ["Runway", "OLL 1 Runway", "R U2 R2 F R F' U2 R' F R F'"],
+    ["Runway", "OLL 2 Zamboni", "f U R U' R' S' U R U' R' F'"],
+    ["Nazi", "OLL 3 Nazi F", "R' F2 R2 U2 R' F R U2 R2 F2 R"],
+    ["Nazi", "OLL 4 Nazi F'", "R' F2 R2 U2 R' F' R U2 R2 F2 R"],
+
+    ["P", "OLL 31 Couch R' U' F", "R' U' F U R U' R' F' R"],
+    ["P", "OLL 32 Couch S sexy", "S R U R' U' R' F R f'"],
+    ["P", "OLL 43 P R' U' F'", "R' U' F' U F R"],
+    ["P", "OLL 44 F usexy", "F U R U' R' F'"],
 ];
 
 var ollVisibility  = {
-    "P": true,
-    "dot_nazi": true,
+    "Runway": true,
+    "Nazi": false,
+    "P": false,
 };
 
 var plls = [];
+
+function toggleOllVisibility(ollName, isChecked) {
+    ollVisibility[ollName] = isChecked;
+
+    if (ollName === "Runway" || ollName === "Nazi") {
+        ollName = "Nazi"
+        isChecked = ollVisibility.Runway || ollVisibility.Nazi
+    }
+
+    const element = document.getElementById(ollName);
+    if (element) {
+        element.style.display = isChecked ? "flex" : "none";
+    }
+    updateOllAlgPool()
+}
+
+function initializeCheckboxesAndButtons() {
+    for (const ollName in ollVisibility) {
+        toggleOllVisibility(ollName,ollVisibility[ollName]);
+
+        const checkbox = document.getElementById(ollName + "_check");
+        if (checkbox) {
+            checkbox.checked = ollVisibility[ollName];
+        }
+    }
+}
 
 function updateOllAlgPool() {
     plls = [];
@@ -134,6 +166,8 @@ function restart(opt) {
     parentNode.appendChild(canvas);
     rendermgr = new Rubikjs.Render.RenderManager(Rubikjs.Render[rendererName].Renderer);
     cube = new Rubikjs.Puzzle.ClassicRubiksCube(rendermgr, opt);
+
+    initializeCheckboxesAndButtons();
 }
 
 function changeRenderer(name) {

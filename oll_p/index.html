@@ -32,7 +32,7 @@
                 width: 100%; /* Upewnia się, że form zajmuje całą szerokość */
                 font-family: 'Courier New', Courier, monospace;
             }
-            form#oll button {
+            form.oll button {
                 width: 25%;
                 font-size: 15px;
             }
@@ -63,7 +63,13 @@
             <input type="button" value="&#128260;" onclick="doMoves('U2')" />
             <input type="button" value="&circlearrowright;" onclick="doMoves('U')" />
         </form>
-        <form id="oll">
+        <form id="p" class="oll">
+            <button type="button" onclick="doOll('OLL 43','')"><strong>P</strong><br>R' U' F'</button>
+            <button type="button" onclick="doOll('OLL 44','')"><strong>P</strong><br>F usexy</button>
+            <button type="button" onclick="doOll('OLL 31','')"><strong>Couch</strong><br>R' U' F</button>
+            <button type="button" onclick="doOll('OLL 32','')"><strong>Couch</strong><br>S sexy</button>
+        </form>
+        <form id="dot nazi" class="oll">
             <button type="button" onclick="doOll('OLL 43','')"><strong>P</strong><br>R' U' F'</button>
             <button type="button" onclick="doOll('OLL 44','')"><strong>P</strong><br>F usexy</button>
             <button type="button" onclick="doOll('OLL 31','')"><strong>Couch</strong><br>R' U' F</button>

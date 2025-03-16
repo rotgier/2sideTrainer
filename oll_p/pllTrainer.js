@@ -52,21 +52,33 @@ var pllsData  = [
 ];
 
 var ollData  = [
-    ["OLL 31 Couch R' U' F", "R' U' F U R U' R' F' R", 1],
-    ["OLL 32 Couch S sexy", "S R U R' U' R' F R f'", 1],
-    ["OLL 43 P R' U' F'", "R' U' F' U F R", 1],
-    ["OLL 44 F usexy", "F U R U' R' F'", 1],
+    ["P", "OLL 31 Couch R' U' F", "R' U' F U R U' R' F' R", 1],
+    ["P", "OLL 32 Couch S sexy", "S R U R' U' R' F R f'", 1],
+    ["P", "OLL 43 P R' U' F'", "R' U' F' U F R", 1],
+    ["P", "OLL 44 F usexy", "F U R U' R' F'", 1],
 ];
+
+var ollVisibility  = {
+    "P": true,
+    "dot_nazi": true,
+};
 
 var plls = [];
 
-for(var i = 0; i < pllsData.length; ++i) {
-    for(var j = 0; j < pllsData[i][2]; ++j) {
-        for(var k = 0; k < ollData.length; ++k) {
-            plls.push([pllsData[i][0], pllsData[i][1], ollData[k][0], ollData[k][1]]);
+function updateOllAlgPool() {
+    plls = [];
+    for(var i = 0; i < pllsData.length; ++i) {
+        for(var j = 0; j < pllsData[i][2]; ++j) {
+            for(var k = 0; k < ollData.length; ++k) {
+                if (ollVisibility[ollData[k][0]]) {
+                    plls.push([pllsData[i][0], pllsData[i][1], ollData[k][1], ollData[k][2]]);
+                }
+            }
         }
     }
 }
+
+updateOllAlgPool()
 
 var lastPll = "";
 var lastMoves = "";
@@ -116,7 +128,7 @@ function restart(opt) {
     parentNode.removeChild(canvas);
     canvas = document.createElement("canvas");
     canvas.setAttribute("width", "330");
-    canvas.setAttribute("height", "330");
+    canvas.setAttribute("height", "250");
     canvas.style.background = backgroundColor;
     canvas.setAttribute("id", "cube");
     parentNode.appendChild(canvas);

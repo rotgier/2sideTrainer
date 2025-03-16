@@ -11,12 +11,11 @@ var optionsBackStickers = {
 var backgroundColor = "#A0A0A0";
 var rendererName = "WebGL";
 
-function doOll(name, auf) {
-    var el = document.getElementById("solution");
-    el.innerHTML = lastPll;
-    ollAlg = ollData.find(item => item[0].startsWith(name))[1]
-    doMoves(ollAlg)
-    // doMoves(auf + " " + ollAlg)
+function doOll(name) {
+     var el = document.getElementById("solution");
+     el.innerHTML = lastPll;
+     ollAlg = ollData.find(item => item[0].startsWith(name))[1]
+     doMoves(ollAlg)
 }
 
 function doMoves(moves) {
@@ -53,10 +52,10 @@ var pllsData  = [
 ];
 
 var ollData  = [
-    ["OLL 31 Couch <", "R' U' F U R U' R' F' R", 1],
-    ["OLL 32 Couch >", "S R U R' U' R' F R f'", 1],
-    ["OLL 43 P <", "R' U' F' U F R", 1],
-    ["OLL 44 P >", "F U R U' R' F'", 1],
+    ["OLL 31 Couch R' U' F", "R' U' F U R U' R' F' R", 1],
+    ["OLL 32 Couch S sexy", "S R U R' U' R' F R f'", 1],
+    ["OLL 43 P R' U' F'", "R' U' F' U F R", 1],
+    ["OLL 44 F usexy", "F U R U' R' F'", 1],
 ];
 
 var plls = [];

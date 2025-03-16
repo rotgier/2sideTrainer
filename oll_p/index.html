@@ -62,11 +62,11 @@
             }
             form.oll button {
                 width: 25%;
+                font-size: 10px;
+            }
+            button strong {
                 font-size: 15px;
             }
-<!--            button strong {-->
-<!--                text-decoration: underline;-->
-<!--            }-->
             form#next button {
                 width: 50%;
             }
@@ -90,6 +90,7 @@
             <button type="button" onclick="doMoves('U\'')">&circlearrowleft;</button>
             <button type="button" onclick="doMoves('U2')" >&#128260;</button>
             <button type="button" onclick="doMoves('U')">&circlearrowright;</button>
+            <button type="button" onclick="next()">Next</button>
         </form>
         <form id="P" class="oll">
             <button type="button" onclick="doOll('OLL 43','')"><strong>P</strong><br>R' U' F'</button>
@@ -103,6 +104,12 @@
             <button type="button" onclick="doOll('OLL 3','')"><strong>Nazi F</strong><br>R' F2 R2</button>
             <button type="button" onclick="doOll('OLL 4','')"><strong>Nazi F'</strong><br>R' F2 R2</button>
         </form>
+        <form id="Fish" class="oll">
+            <button type="button" onclick="doOll('OLL 37','')"><strong>Fish</strong><br>Hedge</button>
+            <button type="button" onclick="doOll('OLL 35','')"><strong>Fish</strong><br>Sledge</button>
+            <button type="button" onclick="doOll('OLL 9','')"><strong>Kite</strong><br>sexy sledge</button>
+            <button type="button" onclick="doOll('OLL 10','')"><strong>Kite</strong><br>RUR'U sledge</button>
+        </form>
         <h1 id="solution" >&nbsp;&nbsp;</h1>
         <form id="ollVisibilityForm">
             <label for="Runway_check">Runway</label>
@@ -113,6 +120,12 @@
             <br>
             <label for="P_check">P</label>
             <input type="checkbox" id="P_check" checked onchange="toggleOllVisibility('P', this.checked)">
+            <br>
+            <label for="Fish_check">Fish</label>
+            <input type="checkbox" id="Fish_check" checked onchange="toggleOllVisibility('Fish', this.checked)">
+            <br>
+            <label for="FishKite_check">Fish_Kite</label>
+            <input type="checkbox" id="FishKite_check" checked onchange="toggleOllVisibility('Fish_Kite', this.checked)">
             <br>
         </form>
     </body>

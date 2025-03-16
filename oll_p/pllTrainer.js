@@ -69,8 +69,8 @@ var ollData  = [
 
     ["C", "OLL 46 C Easy", "R' U' R' F R F' U R"],
     ["C", "OLL 34 C Hard", "R U R2 U' R' F R U R U' F'"],
-    ["W", "OLL 38 W Right", "R U R' U R U' R' U' R' F R F'"],
     ["W", "OLL 36 W Left", "L' U' L U' L' U L U L F' L' F"],
+    ["W", "OLL 38 W Right", "R U R' U R U' R' U' R' F R F'"],
 ];
 
 var ollVisibility  = {

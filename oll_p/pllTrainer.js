@@ -66,12 +66,19 @@ var ollData  = [
     ["Fish", "OLL 35 Fish Sledge", "R U2 R2' F R F' R U2 R'"],
     ["Fish_Kite", "OLL 9 Kite sexy sledge", "R U R' U' R' F R2 U R' U' F'"],
     ["Fish_Kite", "OLL 10 Kite RUR'U sledge", "R U R' U R' F R F' R U2 R'"],
+
+    ["C", "OLL 46 C Easy", "R' U' R' F R F' U R"],
+    ["C", "OLL 34 C Hard", "R U R2 U' R' F R U R U' F'"],
+    ["W", "OLL 38 W Right", "R U R' U R U' R' U' R' F R F'"],
+    ["W", "OLL 36 W Left", "L' U' L U' L' U L U L F' L' F"],
 ];
 
 var ollVisibility  = {
     "Runway": false,
     "Nazi": false,
     "P": false,
+    "C": true,
+    "W": true,
     "Fish": true,
     "Fish_Kite": true,
 };
@@ -88,6 +95,10 @@ function toggleOllVisibility(ollName, isChecked) {
     if (ollName === "Fish" || ollName === "Fish_Kite") {
         ollName = "Fish"
         isChecked = ollVisibility.Fish || ollVisibility.Fish_Kite
+    }
+    if (ollName === "C" || ollName === "W") {
+        ollName = "C"
+        isChecked = ollVisibility.C || ollVisibility.W
     }
 
     const element = document.getElementById(ollName);

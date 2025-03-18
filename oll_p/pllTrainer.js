@@ -57,6 +57,11 @@ var ollData  = [
     ["Nazi", "OLL 3 Nazi F", "R' F2 R2 U2 R' F R U2 R2 F2 R"],
     ["Nazi", "OLL 4 Nazi F'", "R' F2 R2 U2 R' F' R U2 R2 F2 R"],
 
+    ["SLB", "OLL 8 Lighting L", "l' U' L U' L' U2 l"],
+    ["SLB", "OLL 7 Lighting R", "r U R' U R U2 r'"],
+    ["SLB", "OLL 11 Stairs Front", "r' R2 U R' U R U2 R' U M'"],
+    ["SLB", "OLL 12 Stairs Back", "r R2 U' R U' R' U2 R U' R r' "],
+
     ["P", "OLL 31 Couch R' U' F", "R' U' F U R U' R' F' R"],
     ["P", "OLL 32 Couch S sexy", "S R U R' U' R' F R f'"],
     ["P", "OLL 43 P R' U' F'", "R' U' F' U F R"],
@@ -76,11 +81,12 @@ var ollData  = [
 var ollVisibility  = {
     "Runway": false,
     "Nazi": false,
+    "SLB": true,
     "P": false,
-    "C": true,
-    "W": true,
-    "Fish": true,
-    "Fish_Kite": true,
+    "C": false,
+    "W": false,
+    "Fish": false,
+    "Fish_Kite": false,
 };
 
 var plls = [];

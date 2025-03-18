@@ -105,6 +105,12 @@
             <button type="button" onclick="doMoves('U')">&circlearrowright;</button>
             <button type="button" onclick="next()">Next</button>
         </form>
+        <form id="SLB" class="oll">
+            <button type="button" onclick="doOll('OLL 8')"><strong>Light L</strong></button>
+            <button type="button" onclick="doOll('OLL 7')"><strong>Light R</strong></button>
+            <button type="button" onclick="doOll('OLL 11')"><strong>Light</strong><br>Front</button>
+            <button type="button" onclick="doOll('OLL 12')"><strong>Light</strong><br>Back</button>
+        </form>
         <form id="P" class="oll">
             <button type="button" onclick="doOll('OLL 43','')"><strong>P</strong><br>R' U' F'</button>
             <button type="button" onclick="doOll('OLL 44','')"><strong>P</strong><br>F usexy</button>
@@ -137,6 +143,10 @@
             <input type="checkbox" id="Nazi_check" checked onchange="toggleOllVisibility('Nazi', this.checked)">
             <br>
 
+            <label for="SLB_check">SLB</label>
+            <input type="checkbox" id="SLB_check" checked onchange="toggleOllVisibility('SLB', this.checked)">
+            <br>
+
             <label for="P_check">P</label>
             <input type="checkbox" id="P_check" checked onchange="toggleOllVisibility('P', this.checked)">
             <br>
@@ -149,8 +159,8 @@
 
             <label for="Fish_check">Fish</label>
             <input type="checkbox" id="Fish_check" checked onchange="toggleOllVisibility('Fish', this.checked)">
-            <label for="FishKite_check">Fish_Kite</label>
-            <input type="checkbox" id="FishKite_check" checked onchange="toggleOllVisibility('Fish_Kite', this.checked)">
+            <label for="Fish_Kite_check">Fish_Kite</label>
+            <input type="checkbox" id="Fish_Kite_check" checked onchange="toggleOllVisibility('Fish_Kite', this.checked)">
             <br>
         </form>
     </body>

@@ -119,6 +119,12 @@
                 <button type="button" onclick="doOll('OLL 11')"><strong>Light</strong><br>Front</button>
             </form>
         </div>
+        <form id="BLB" class="oll">
+            <button type="button" onclick="doOll('OLL 11')"></button>
+            <button type="button" onclick="doOll('OLL 12')"></button>
+            <button type="button" onclick="doOll('OLL 39')"><strong>BLB L</strong><br>f'</button>
+            <button type="button" onclick="doOll('OLL 40')"><strong>BLB R</strong><br>f</button>
+        </form>
         <form id="P" class="oll">
             <button type="button" onclick="doOll('OLL 43','')"><strong>P</strong><br>R' U' F'</button>
             <button type="button" onclick="doOll('OLL 44','')"><strong>P</strong><br>F usexy</button>
@@ -143,6 +149,27 @@
             <button type="button" onclick="doOll('OLL 9','')"><strong>Kite</strong><br>sexy sledge</button>
             <button type="button" onclick="doOll('OLL 10','')"><strong>Kite</strong><br>RUR'U sledge</button>
         </form>
+        <div id="L">
+            <form class="oll">
+                <button type="button" onclick="doOll('OLL 11')"></button>
+                <button type="button" onclick="doOll('OLL 12')"></button>
+                <button type="button" onclick="doOll('OLL 47')"><strong>L Hedge</strong><br></button>
+                <button type="button" onclick="doOll('OLL 48')"><strong>L Right</strong><br></button>
+            </form>
+            <form class="oll">
+                <button type="button" onclick="doOll('OLL 11')"></button>
+                <button type="button" onclick="doOll('OLL 12')"></button>
+                <button type="button" onclick="doOll('OLL 50')"><strong>Squeezy Front</strong><br></button>
+                <button type="button" onclick="doOll('OLL 49')"><strong>Squeezy Back</strong><br></button>
+            </form>
+            <form class="oll">
+                <button type="button" onclick="doOll('OLL 11')"></button>
+                <button type="button" onclick="doOll('OLL 12')"></button>
+                <button type="button" onclick="doOll('OLL 53')"><strong>Pan Front</strong><br></button>
+                <button type="button" onclick="doOll('OLL 54')"><strong>Pan Back</strong><br></button>
+            </form>
+        </div>
+
         <h1 id="solution" >&nbsp;&nbsp;</h1>
         <form id="ollVisibilityForm">
             <label for="Runway_check">Runway</label>
@@ -153,6 +180,10 @@
 
             <label for="SLB_check">SLB</label>
             <input type="checkbox" id="SLB_check" checked onchange="toggleOllVisibility('SLB', this.checked)">
+            <br>
+
+            <label for="BLB_check">BLB</label>
+            <input type="checkbox" id="BLB_check" checked onchange="toggleOllVisibility('BLB', this.checked)">
             <br>
 
             <label for="P_check">P</label>
@@ -169,6 +200,10 @@
             <input type="checkbox" id="Fish_check" checked onchange="toggleOllVisibility('Fish', this.checked)">
             <label for="Fish_Kite_check">Fish_Kite</label>
             <input type="checkbox" id="Fish_Kite_check" checked onchange="toggleOllVisibility('Fish_Kite', this.checked)">
+            <br>
+
+            <label for="L_check">L</label>
+            <input type="checkbox" id="L_check" checked onchange="toggleOllVisibility('L', this.checked)">
             <br>
         </form>
     </body>

@@ -62,6 +62,9 @@ var ollData  = [
     ["SLB", "OLL 11 Stairs Front", "r' R2 U R' U R U2 R' U M'"],
     ["SLB", "OLL 12 Stairs Back", "r R2 U' R U' R' U2 R U' R r' "],
 
+    ["BLB", "OLL 39 BLB L", "f' r U r' U' r' F r S"],
+    ["BLB", "OLL 40 BLB R", "f R' F' R U R U' R' S'"],
+
     ["P", "OLL 31 Couch R' U' F", "R' U' F U R U' R' F' R"],
     ["P", "OLL 32 Couch S sexy", "S R U R' U' R' F R f'"],
     ["P", "OLL 43 P R' U' F'", "R' U' F' U F R"],
@@ -76,17 +79,26 @@ var ollData  = [
     ["C", "OLL 34 C Hard", "R U R2 U' R' F R U R U' F'"],
     ["W", "OLL 36 W Left", "L' U' L U' L' U L U L F' L' F"],
     ["W", "OLL 38 W Right", "R U R' U R U' R' U' R' F R F'"],
+
+    ["L", "OLL 47 L Hedge", "F R' F' R U2 R U' R' U R U2 R'"],
+    ["L", "OLL 48 L Right", "F R U R' U' R U R' U' F'"],
+    ["L", "OLL 50 L Squeezy Front", "r' U r2 U' r2 U' r2 U r'"],
+    ["L", "OLL 49 L Squeezy Back", "r U' r2 U r2 U r2 U' r"],
+    ["L", "OLL 53 L Pan Front", "r' U' R U' R' U R U' R' U2 r"],
+    ["L", "OLL 54 L Pan Back", "r U R' U R U' R' U R U2 r'"],
 ];
 
 var ollVisibility  = {
     "Runway": false,
     "Nazi": false,
-    "SLB": true,
+    "SLB": false,
+    "BLB": true,
     "P": false,
     "C": false,
     "W": false,
     "Fish": false,
     "Fish_Kite": false,
+    "L": true,
 };
 
 var plls = [];

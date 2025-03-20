@@ -109,7 +109,11 @@ function toggleOllVisibility(ollName, isChecked) {
 
     const element = document.getElementById(ollName);
     if (element) {
-        element.style.display = isChecked ? "flex" : "none";
+        display = "flex"
+        if (element.tagName === "DIV") {
+            display = "block"
+        }
+        element.style.display = isChecked ? display : "none";
     }
     updateOllAlgPool()
 }
@@ -248,9 +252,6 @@ window.onkeydown = function(event) {
     } else if(event.key === "c") {
         doOll("OLL 43","")
         return false;
-//    } else if(event.key === "z") {
-//        doMoves("F R U R' U' F'")
-//        return false;
     } else if(event.key === "v") {
         doOll("OLL 44","")
         return false;
@@ -260,11 +261,11 @@ window.onkeydown = function(event) {
     } else if(event.key === "z") {
         doOll("OLL 32","")
         return false;
-    } else if(event.keyCode == 39 || event.key === "r") {
+    } else if(event.keyCode == 39) {
         // lastMoves += " y";
         doMoves("U");
         return false;
-    } else if(event.keyCode == 37 || event.key === "q") {
+    } else if(event.keyCode == 37) {
         // lastMoves += " y'";
         doMoves("U'");
         return false;

@@ -105,12 +105,20 @@
             <button type="button" onclick="doMoves('U')">&circlearrowright;</button>
             <button type="button" onclick="next()">Next</button>
         </form>
-        <form id="SLB" class="oll">
-            <button type="button" onclick="doOll('OLL 8')"><strong>Light L</strong></button>
-            <button type="button" onclick="doOll('OLL 7')"><strong>Light R</strong></button>
-            <button type="button" onclick="doOll('OLL 11')"><strong>Light</strong><br>Front</button>
-            <button type="button" onclick="doOll('OLL 12')"><strong>Light</strong><br>Back</button>
-        </form>
+        <div id="SLB">
+            <form class="oll">
+                <button type="button" onclick="doOll('OLL 11')"></button>
+                <button type="button" onclick="doOll('OLL 12')"></button>
+                <button type="button" onclick="doOll('OLL 8')"><strong>Light L</strong><br>&nbsp;</button>
+                <button type="button" onclick="doOll('OLL 7')"><strong>Light R</strong><br>&nbsp;</button>
+            </form>
+            <form class="oll">
+                <button type="button" onclick="doOll('OLL 8')"><strong></strong></button>
+                <button type="button" onclick="doOll('OLL 7')"><strong></strong>&nbsp;</button>
+                <button type="button" onclick="doOll('OLL 11')"><strong>Light</strong><br>Front</button>
+                <button type="button" onclick="doOll('OLL 12')"><strong>Light</strong><br>Back</button>
+            </form>
+        </div>
         <form id="P" class="oll">
             <button type="button" onclick="doOll('OLL 43','')"><strong>P</strong><br>R' U' F'</button>
             <button type="button" onclick="doOll('OLL 44','')"><strong>P</strong><br>F usexy</button>
